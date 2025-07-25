@@ -12,7 +12,7 @@ function Header() {
                 </div>
                 <div className="header_logo flex align-center items-center">
                     <img src="./images/logo.png" alt="logo" />
-                    <Link to="/" className="playfair-display-Entvy">Entvy.log</Link>
+                    <Link to="/entvy_blog_vite/" className="playfair-display-Entvy">Entvy.log</Link>
                 </div>
             </header>
         </>

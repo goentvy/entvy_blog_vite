@@ -15,11 +15,11 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/entvy_blog_vite/" element={<App />} />
-        <Route path="/html" element={<Html />} />
-        <Route path="/css" element={<Css />} />
-        <Route path="/js" element={<Js />} />
-        <Route path="/react" element={<Reactjs />} />
-        <Route path="/figma" element={<Figma />} />
+        <Route path="/entvy_blog_vite/html" element={<Html />} />
+        <Route path="/entvy_blog_vite/css" element={<Css />} />
+        <Route path="/entvy_blog_vite/js" element={<Js />} />
+        <Route path="/entvy_blog_vite/react" element={<Reactjs />} />
+        <Route path="/entvy_blog_vite/figma" element={<Figma />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
