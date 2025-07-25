@@ -1,0 +1,35 @@
+.reactjs_wrap {
+    width: 1400px;
+    margin: auto;
+    padding: 20px 0;
+    background-color: #F5F4F0;
+}
+@media screen and (max-width: 1600px) {
+    .reactjs_wrap {
+        width: 1200px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .reactjs_wrap {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .reactjs_wrap {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .reactjs_wrap {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reactjs_wrap {
+        width: 100%;
+    }
+}

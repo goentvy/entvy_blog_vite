@@ -1,0 +1,126 @@
+.main_wrap {
+    width: 1400px;
+    margin: auto;
+    padding: 20px 0;
+    background-color: #F5F4F0;
+}
+.main_content {
+    width: 100%;
+    border-left: 1px solid #C0C0C0;
+    border-right: 1px solid #C0C0C0;
+    padding: 0 10px;
+}
+.post {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border: 1px solid #C0C0C0;
+    border-radius: 8px;
+}
+.post > .post_title {
+    margin-bottom: 10px;
+}
+.post > .post_content > img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+.post > .post_content {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1600px) {
+    .main_wrap {
+        width: 1160px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main_wrap {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .main_wrap {
+        width: 740px;
+    }
+    .post {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .post > .post_title {
+        font-size: 18px;
+    }
+    .post > .post_content > img {
+        width: 70px;
+        height: 70px;
+    }
+    .post > .post_content {
+        font-size: 13px;
+    }
+    .l_aside_list > li > a {
+        font-size: 14px;
+    }
+    .r_aside_title {
+        font-size: 16px;
+    }
+    .r_aside_content {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .main_wrap {
+        width: 100%;
+    }
+    .main_wrap > .main_content {
+        border: none;
+    }
+    .r_aside_wrap, .l_aside_wrap {
+        display: none;
+    }
+    .post {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .post > .post_title {
+        font-size: 16px;
+    }
+    .post > .post_content > img {
+        width: 50px;
+        height: 50px;
+    }
+    .post > .post_content {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main_wrap {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .main_wrap > .main_content {
+        border: none;
+    }
+    .r_aside_wrap, .l_aside_wrap {
+        display: none;
+    }
+    .post {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .post > .post_title {
+        font-size: 16px;
+    }
+    .post > .post_content > img {
+        width: 50px;
+        height: 50px;
+    }
+    .post > .post_content {
+        font-size: 13px;
+    }
+}

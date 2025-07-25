@@ -1,0 +1,10 @@
+.r_aside_wrap {
+    width: 100%;
+    padding-left: 10px;
+}
+.r_aside_content_box {
+    margin-bottom: 10px;
+    border: 1px solid #C0C0C0;
+    border-radius: 8px;
+    padding: 10px;
+}

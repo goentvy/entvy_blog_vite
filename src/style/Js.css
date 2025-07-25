@@ -1,0 +1,35 @@
+.js_wrap {
+    width: 1400px;
+    margin: auto;
+    padding: 20px 0;
+    background-color: #F5F4F0;
+}
+@media screen and (max-width: 1600px) {
+    .js_wrap {
+        width: 1200px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .js_wrap {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .js_wrap {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .js_wrap {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .js_wrap {
+        width: 100%;
+    }
+}

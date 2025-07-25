@@ -1,0 +1,21 @@
+.l_aside_wrap {
+    width: 100%;
+    padding-right: 10px;
+}
+.l_aside_list {
+    width: 100%;
+}
+.l_aside_list > li {
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #323228;
+}
+.l_aside_list > li > a {
+    display: block;
+    width: 100%;
+    color: #f5f4f0;
+}
+.l_aside_list > li > a:hover {
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+}

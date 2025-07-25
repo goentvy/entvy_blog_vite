@@ -1,0 +1,103 @@
+.nav_wrap {
+    width: 1400px;
+    margin: auto;
+    border-top: 1px solid #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+}
+.nav_wrap > .nav_list {
+    height: 60px;
+}
+.nav_wrap > .nav_list > .nav_item {
+    padding: 10px;
+    height: 100%;
+    background-color: #F5F4F0;
+}
+.nav_wrap > .nav_list > .nav_item:hover {
+    background-color: #b5b4b3;
+    cursor: pointer;
+}
+.nav_wrap > .nav_list > .nav_item > a {
+    font-family: "Gowun Batang", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+}
+.nav_wrap > .nav_list > .nav_item > a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Mobile CSS media query */
+@media screen and (max-width: 1600px) {
+    .nav_wrap {
+        width: 1160px;
+    }
+    .nav_wrap > .nav_list > .nav_item > a {
+        font-size: 18px;
+    }
+    .nav_wrap > .nav_list > .nav_item {
+        padding: 10px;
+    }
+    .nav_wrap > .nav_list {
+        height: 60px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .nav_wrap {
+        width: 900px;
+    }
+    .nav_wrap > .nav_list > .nav_item > a {
+        font-size: 16px;
+    }
+    .nav_wrap > .nav_list > .nav_item {
+        padding: 8px;
+    }
+    .nav_wrap > .nav_list {
+        height: 50px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .nav_wrap {
+        width: 740px;
+    }
+    .nav_wrap > .nav_list > .nav_item > a {
+        font-size: 16px;
+    }
+    .nav_wrap > .nav_list > .nav_item {
+        padding: 8px;
+    }
+    .nav_wrap > .nav_list {
+        height: 50px;
+    }
+}
+@media screen and (max-width: 760px) {
+    .nav_wrap {
+        width: 100%;
+    }
+    .nav_wrap > .nav_list > .nav_item > a {
+        font-size: 14px;
+    }
+    .nav_wrap > .nav_list > .nav_item {
+        padding: 5px;
+    }
+    .nav_wrap > .nav_list {
+        height: 40px;
+    }
+    
+}
+@media screen and (max-width: 480) {
+    .nav_wrap {
+        width: 100%;
+    }
+    .nav_wrap > .nav_list > .nav_item > a {
+        font-size: 14px;
+    }
+    .nav_wrap > .nav_list > .nav_item {
+        padding: 5px;
+    }
+    .nav_wrap > .nav_list {
+        height: 40px;
+    }
+}
