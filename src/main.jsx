@@ -14,7 +14,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/entvy_blog_vite/" element={<App />} />
         <Route path="/html" element={<Html />} />
         <Route path="/css" element={<Css />} />
         <Route path="/js" element={<Js />} />
