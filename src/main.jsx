@@ -7,6 +7,7 @@ import Css from './components/Css.jsx'
 import Js from './components/Js.jsx'
 import Reactjs from './components/Reactjs.jsx'
 import Figma from './components/Figma.jsx'
+import Filter from './components/Filter.jsx'
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/entvy_blog_vite/js" element={<Js />} />
         <Route path="/entvy_blog_vite/react" element={<Reactjs />} />
         <Route path="/entvy_blog_vite/figma" element={<Figma />} />
+        <Route path="/entvy_blog_vite/filter" element={<Filter />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

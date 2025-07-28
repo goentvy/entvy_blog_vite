@@ -1,4 +1,4 @@
-import '../style/Reactjs.css';
+import '../styles/Reactjs.css';
 import Header from './Header';
 import Nav from './Nav';
 

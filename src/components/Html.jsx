@@ -1,4 +1,4 @@
-import '../style/Html.css';
+import '../styles/Html.css';
 import Header from './Header';
 import Nav from './Nav';
 
@@ -8,7 +8,7 @@ function Html() {
             <Header />
             <Nav />
             <div className="html_wrap">
-                <h1>HTML page</h1>
+                <h1>HTML Page</h1>
             </div>
         </>
     );

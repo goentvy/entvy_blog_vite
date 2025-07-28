@@ -1,4 +1,4 @@
-import '../style/Raside.css'
+import '../styles/Raside.css'
 
 function RightSideBar({title, content}) {
     return (

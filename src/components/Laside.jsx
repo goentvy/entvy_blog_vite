@@ -1,10 +1,10 @@
-import '../style/Laside.css'
+import '../styles/Laside.css'
 import { Link } from 'react-router-dom';
 
-function Sidelink({ url, label }) {
+function Sidelink({ url, label, target="_blank"}) {
     return (
         <li>
-            <Link to={url} target="_blank">{label}</Link>
+            <Link to={url} target={target}>{label}</Link>
         </li>
     );
 }
@@ -16,6 +16,7 @@ function Laside() {
                 <Sidelink url="https://www.youtube.com/" label="Youtube →" />
                 <Sidelink url="https://goentvy.github.io/html2507/" label="개인과제 →" />
                 <Sidelink url="https://skc4365.github.io/web2507/" label="수강생 과제 →" />
+                <Sidelink url="/entvy_blog_vite/filter" label="검색어필터 →" target="_self"/>
             </ul>
         </aside>
     );

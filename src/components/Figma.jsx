@@ -1,4 +1,4 @@
-import '../style/Figma.css';
+import '../styles/Figma.css';
 import Header from './Header';
 import Nav from './Nav';
 

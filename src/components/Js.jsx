@@ -1,4 +1,4 @@
-import '../style/Js.css';
+import '../styles/Js.css';
 import Header from './Header';
 import Nav from './Nav';
 
