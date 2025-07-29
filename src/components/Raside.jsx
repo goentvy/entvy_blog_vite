@@ -7,7 +7,7 @@ function RightSideBar({title, content}) {
                 {
                     content ? (
                         <div className="r_aside_content_box">
-                            <h2 className="r_aside_title">{content.notice}</h2>
+                            <h2 className="r_aside_title cursor">{content.notice}</h2>
                             <p className="r_aside_content">{content.text}</p>
                         </div>
                     ) : (

@@ -84,7 +84,7 @@ a {
   grid-template-areas:
     "lsd lsd lsd main main main main main main main main main rsd rsd rsd"
 }
-/* 반응형  */
+/* Grid 반응형  */
 @media screen and (max-width: 1200px) {
   .main_wrap {
     grid-template-columns: repeat(12, 1fr);

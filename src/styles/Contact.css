@@ -1,0 +1,99 @@
+.contact_wrap {
+    width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #C0C0C0;
+    border-radius: 30px;
+}
+
+.contact_wrap > .contact_title {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.contact_wrap > form > .contact_form > .contact_input {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact_wrap > form > .contact_form >  .contact_input > p > input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #C0C0C0;
+    background-color: #6D6F7F;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.contact_wrap > form > .contact_form >  .contact_input > p > input::placeholder {
+    color: #ffffff;
+}
+.contact_wrap > form > .contact_form >  .contact_input > p > input:focus {
+    border: 2px solid #0B5ED7;
+    outline: none;
+}
+
+.contact_wrap > form > .contact_form > .contact_textarea > textarea {
+    border: none;
+    background-color: #F5F4F0;
+    width: 400px;
+    height: auto;
+    resize: none;
+    overflow: hidden;
+    padding: 5px;
+    font-size: 14px;
+    field-sizing: content;
+}
+.contact_wrap > form > .contact_form > .contact_textarea > textarea:focus {
+    outline: none;
+}
+.contact_wrap > form > .contact_form > .contact_btn > button {
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #F5F4F0;
+    background-color: #0B5ED7;
+    color: #ffffff;
+}
+
+/* Mobile CSS media query */
+@media (max-width: 760px) {
+    .contact_wrap {
+        width: 420px;
+    }
+    .contact_wrap > form > .contact_form > .contact_input {
+        width: 90%;
+    }
+    .contact_wrap > form > .contact_form >  .contact_input > p > input {
+        width: 90%;
+    }
+    .contact_wrap > form > .contact_form > .contact_textarea > textarea {
+        width: 85%;
+    }
+    .contact_wrap > form > .contact_form > .contact_btn > button {
+        width: 80px;
+        height: 35px;
+    }
+}
+@media (max-width: 480px) {
+    .contact_wrap {
+        width: 320px;
+    }
+    .contact_wrap > form > .contact_form > .contact_input {
+        width: 90%;
+    }
+    .contact_wrap > form > .contact_form >  .contact_input > p > input {
+        width: 90%;
+    }
+    .contact_wrap > form > .contact_form > .contact_textarea > textarea {
+        width: 85%;
+    }
+    .contact_wrap > form > .contact_form > .contact_btn > button {
+        width: 80px;
+        height: 35px;
+    }
+}

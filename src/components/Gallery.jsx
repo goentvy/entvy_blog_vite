@@ -1,7 +1,5 @@
 import '../styles/Gallery.css'
 import galleryList from '../json/galleryList.json'
-import Header from './Header';
-import Nav from './Nav';
 import { useState } from 'react';
 
 function Gallery() {
@@ -32,8 +30,6 @@ function Gallery() {
 
     return (
         <>
-            <Header />
-            <Nav />
             <h1 className="gallery_title">Gallery - {galleryList.length} Page </h1>
             <div className="btn_wrap">
                 <button className="previous_btn" onClick={PreviousImage}>Previous</button>

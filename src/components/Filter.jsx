@@ -1,8 +1,6 @@
 import '../styles/filter.css'
 import htmlData from '../json/htmlData.json'
 import { useState } from 'react'
-import Header from './Header';
-import Nav from './Nav';
 
 function ProductCategoryRow({category}) {
     return (
@@ -122,8 +120,6 @@ function FilterableProductTable({ products }) {
 function Filter() {
     return (
         <>
-            <Header />
-            <Nav />
             <div className="filter_wrap">
                 <FilterableProductTable products={htmlData}/>
             </div>

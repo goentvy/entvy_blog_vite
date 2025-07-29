@@ -1,6 +1,4 @@
 import '../styles/Main.css';
-import Header from './Header.jsx';
-import Nav from './Nav.jsx';
 import Laside from './Laside.jsx';
 import Raside from './Raside.jsx';
 
@@ -30,8 +28,6 @@ const Posts = [
 function Main() {
     return (
         <>
-            <Header />
-            <Nav />
             <div className="main_wrap">
                 <Laside />
                 <div className="main_content">

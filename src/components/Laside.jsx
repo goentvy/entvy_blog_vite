@@ -18,6 +18,8 @@ function Laside() {
                 <Sidelink url="https://skc4365.github.io/web2507/" label="수강생 과제 →" />
                 <Sidelink url="/entvy_blog_vite/filter" label="검색어필터 →" target="_self" />
                 <Sidelink url="/entvy_blog_vite/gallery" label="갤러리 →" target="_self" />
+                <Sidelink url="/entvy_blog_vite/contact" label="방명록 →" target="_self" />
+                <Sidelink url="/entvy_blog_vite/todolist" label="TodoList →" target="_self" />
             </ul>
         </aside>
     );

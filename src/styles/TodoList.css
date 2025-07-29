@@ -1,0 +1,33 @@
+.todolist_wrap {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.todolist_wrap > p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.todolist_wrap > input {
+    padding: 5px;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+}
+.todolist_wrap > button {
+    padding: 5px;
+    background-color: #0B5ED7;
+    border: none;
+    color: #ffffff;
+}
+.todolist_wrap > ul > li {
+    font-size: 16px;
+    padding: 10px 0;
+}
+.todolist_wrap > ul > li > button {
+    padding: 3px;
+    background-color: #FA5A5A;
+    border: none;
+    color: #ffffff;
+    margin-left: 5px;
+}
