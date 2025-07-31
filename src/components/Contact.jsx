@@ -23,7 +23,6 @@ function Contact() {
     async function getContactData() {
         const { data, error } = await supabase.from('contact').select();
         if(error) console.error('SELECT Error', error);
-        else console.log('SELECT');
         setContactData(data);
     }
 
@@ -32,7 +31,6 @@ function Contact() {
             { username: name, password: pwd, content: textarea }
         ]);
         if(error) console.error('INSERT Error', error);
-        else console.log('INSERT', data);
     }
 
     useEffect(() => {
@@ -40,22 +38,24 @@ function Contact() {
     }, []);
 
     return (
-        <div className="contact_wrap">
-            <p className="contact_title">Contact Us</p>
-            <form action="#">
-                <div className="contact_form">
-                    <div className="contact_input">
-                        <p><input type="text" placeholder="이름" onChange={nameValue}/></p>
-                        <p><input type="password" placeholder="비밀번호" onChange={pwdValue} /></p>
+        <>
+            <div className="contact_wrap">
+                <p className="contact_title">Contact Us</p>
+                <form action="#">
+                    <div className="contact_form">
+                        <div className="contact_input">
+                            <p><input type="text" placeholder="이름" onChange={nameValue}/></p>
+                            <p><input type="password" placeholder="비밀번호" onChange={pwdValue} /></p>
+                        </div>
+                        <div className="contact_textarea">
+                            <textarea name="comment" id="myTextarea" placeholder="내용을 작성해주세요." onChange={textareaValue}></textarea>
+                        </div>
+                        <div className="contact_btn">
+                            <button type="submit" onClick={contactSubmit}>보내기</button>
+                        </div>
                     </div>
-                    <div className="contact_textarea">
-                        <textarea name="comment" id="myTextarea" placeholder="내용을 작성해주세요." onChange={textareaValue}></textarea>
-                    </div>
-                    <div className="contact_btn">
-                        <button type="submit" onClick={contactSubmit}>보내기</button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
             <div className="contact_list">
                 <ul>
                     {contactDatas.map((contactData) => (
@@ -63,7 +63,7 @@ function Contact() {
                     ))}
                 </ul>
             </div>
-        </div>
+        </>
     );
 }
 
