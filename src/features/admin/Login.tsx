@@ -10,7 +10,7 @@ function Login() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // navigate(`${location.pathname}/table`);
+        checkLogin()
     }, []);
 
     return (
@@ -24,7 +24,6 @@ function Login() {
                     if(username === 'test' && password === '1234') {
                         e.preventDefault();
                         signInWithGithub();
-                        navigate(`${location.pathname}/table`);
                     } else {
                         console.log('username or password error');
                     }

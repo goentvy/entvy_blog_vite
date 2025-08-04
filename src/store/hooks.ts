@@ -12,7 +12,7 @@ export async function signInWithGithub() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "github",
         options: {
-        redirectTo: "http://localhost:5173/entvy_blog_vite/admin/",
+        redirectTo: "http://localhost:5173/entvy_blog_vite/admin/table",
         },
     });
     if(error) {
@@ -63,6 +63,8 @@ export async function deletePost(id, dbTable) {
     const { data, error } = await supabase.from(dbTable).delete().eq("id", id);
     if(error) {
         console.error('Delete Error', error, data)
+    } else {
+        console.log('Delete success', data);
     }
 }
 
