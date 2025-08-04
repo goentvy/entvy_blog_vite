@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "jsx": "react-jsx",
+    "module": "es2020",
+    "moduleResolution": "node",
+  },
+  "includes": ["src"]
+}

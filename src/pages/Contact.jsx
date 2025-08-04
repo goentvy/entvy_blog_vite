@@ -1,13 +1,11 @@
 import '../styles/Contact.css'
 import { useState, useEffect } from 'react'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY)
+import { getData, DateFilter, InsertSubmit } from '../store/hooks'
 
 function Contact() {
-    const [ name, setName ] = useState('');
-    const [ pwd, setPwd ] = useState('');
-    const [ textarea, setTextarea ] = useState('');
+    const [ username, setName ] = useState('');
+    const [ password, setPwd ] = useState('');
+    const [ content, setTextarea ] = useState('');
     const [ contactDatas, setContactData ] = useState([]);
 
     function nameValue(e) {
@@ -20,22 +18,15 @@ function Contact() {
         setTextarea(e.target.value);
     }
 
-    async function getContactData() {
-        const { data, error } = await supabase.from('contact').select();
-        if(error) console.error('SELECT Error', error);
-        setContactData(data);
-    }
-
     async function contactSubmit() {
-        if(name === '' || pwd === '' || textarea === '') return alert('이름, 비밀번호, 내용을 모두 넣어주세요.')
-        const { data, error } = await supabase.from('contact').insert([
-            { username: name, password: pwd, content: textarea }
-        ]);
-        if(error) console.error('INSERT Error', error, data);
+        if(username === '' || password === '' || content === '') {
+            return alert('이름, 비밀번호, 내용을 모두 넣어주세요.')
+        }
+        InsertSubmit({username, password, content}, 'contact');
     }
 
     useEffect(() => {
-        getContactData();
+        getData(setContactData, 'contact');
     }, []);
 
     return (
@@ -71,7 +62,7 @@ function Contact() {
                             </p>
                             <div className="contact_list_footer">
                                 <div className="contact_list_footer_box">
-                                    {contactData.created_at}
+                                    { DateFilter(contactData.created_at) }
                                 </div>
                             </div>
                         </div>

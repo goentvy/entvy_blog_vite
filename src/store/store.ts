@@ -1,6 +1,36 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { configureStore } from "@reduxjs/toolkit"
-import menuReducer from '../features/menu/menuSlice.ts'
+import menuReducer from '../features/menu/menuSlice'
+import { createClient } from '@supabase/supabase-js'
+
+interface ImportMetaEnv {
+    VITE_SUPABASE_URL: string;
+    VITE_SUPABASE_ANON_KEY: string;
+}
+
+interface ImportMeta {
+    readonly env: ImportMetaEnv;
+}
+export interface EnvConfig {
+  supabaseUrl: string;
+  supabaseAnonKey: string;
+}
+
+export const envConfig: EnvConfig = {
+  supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
+  supabaseAnonKey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+};
+
+declare global {
+    interface ImportMeta {
+        readonly env: ImportMetaEnv;
+    }
+}
+
+export const supabase = createClient(
+    import.meta.env.VITE_SUPABASE_URL, 
+    import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 export const store = configureStore({
   reducer: {
@@ -19,4 +49,4 @@ export type AppThunk<ThunkReturnType = void> = ThunkAction<
   RootState,
   unknown,
   Action
->
+>;

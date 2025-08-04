@@ -17,6 +17,9 @@ import Contact from './pages/Contact.jsx'
 import TodoList from './pages/TodoList.jsx'
 import Search from './layout/Search.jsx'
 import Menu from './layout/Menu.js'
+import Admin from './pages/Admin.tsx'
+import Post from './features/admin/Post.tsx'
+import Delete from './features/admin/Delete.tsx'
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
@@ -39,6 +42,9 @@ createRoot(document.getElementById('root')).render(
           <Route path="/entvy_blog_vite/contact" element={<Contact />} />
           <Route path="/entvy_blog_vite/todolist" element={<TodoList />} />
           <Route path="/entvy_blog_vite/search" element={<Search />} />
+          <Route path="/entvy_blog_vite/admin" element={<Admin />} />
+          <Route path="/entvy_blog_vite/admin/post" element={<Post />} />
+          <Route path="/entvy_blog_vite/admin/table" element={<Delete />} />
         </Routes>
       </BrowserRouter>
     </Provider>
