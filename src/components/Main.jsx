@@ -1,6 +1,6 @@
 import '../styles/Main.css';
-import Laside from './Laside.jsx';
-import Raside from './Raside.jsx';
+import Laside from '../layout/Laside.jsx';
+import Raside from '../layout/Raside.jsx';
 
 function Post({id, category, title, content, author, date, img}) {
     return (

@@ -1,6 +1,6 @@
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { createSlice } from "@reduxjs/toolkit"
-import type { RootState } from "../../app/store.ts"
+import type { RootState } from "../../store/store.ts"
 
 export interface MenuState {
   toggle: boolean

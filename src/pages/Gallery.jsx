@@ -1,5 +1,5 @@
 import '../styles/Gallery.css'
-import galleryList from '../json/galleryList.json'
+import galleryList from '../data/galleryList.json'
 import { useState } from 'react';
 
 function Gallery() {

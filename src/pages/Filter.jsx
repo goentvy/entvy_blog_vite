@@ -1,5 +1,5 @@
 import '../styles/filter.css'
-import htmlData from '../json/htmlData.json'
+import htmlData from '../data/htmlData.json'
 import { useState } from 'react'
 
 function ProductCategoryRow({category}) {
