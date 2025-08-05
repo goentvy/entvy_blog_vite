@@ -8,11 +8,12 @@ import {
 } from '../features/menu/menuSlice'
 
 function Header() {
-    const dispatch = useAppDispatch()
-    const toggle = useAppSelector(selectMenu)
+    const dispatch = useAppDispatch();
+    const toggle = useAppSelector(selectMenu);
+    const menubar = document.getElementById('menu');
 
     function toggleMenu() {
-        dispatch(setToggle(!toggle))
+        dispatch(setToggle(!toggle));
     }
 
     return (

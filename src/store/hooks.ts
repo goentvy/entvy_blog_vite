@@ -12,7 +12,7 @@ export async function signInWithGithub() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "github",
         options: {
-        redirectTo: "http://localhost:5173/entvy_blog_vite/admin/table",
+        redirectTo: "http://localhost:5173/entvy_blog_vite/admin/page",
         },
     });
     if(error) {
@@ -22,7 +22,7 @@ export async function signInWithGithub() {
     }
 }
 
-// github 계정 체크
+// github 계정 상태체크
 export async function checkLogin() {
     const authInfo = await supabase.auth.getSession();
     const session = authInfo.data.session;
@@ -44,8 +44,11 @@ export async function signOut() {
 //  supabase DB Get
 export async function getData(setData, dbTable) {
     const { data, error } = await supabase.from(dbTable).select();
-    if(error) console.error('SELECT Error', error);
-    setData(data);
+    if(error) {
+        console.error('SELECT Error', error);
+    } else {
+        setData(data);
+    }
 }
 
 // supabase DB Insert
@@ -55,6 +58,8 @@ export async function InsertSubmit(insertData, dbTable) {
     ]);
     if(error) {
         console.error('INSERT Error', error, data);
+    } else {
+        console.log('Insert Success' , data);
     }
 }
 
@@ -64,7 +69,9 @@ export async function deletePost(id, dbTable) {
     if(error) {
         console.error('Delete Error', error, data)
     } else {
-        console.log('Delete success', data);
+        console.log('Delete success');
+        // 삭제 후 새로고침
+        window.location.reload();
     }
 }
 

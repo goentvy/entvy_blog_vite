@@ -1,14 +1,11 @@
 import '../../styles/Login.css'
 import { checkLogin, signInWithGithub, signOut } from '../../store/hooks'
-import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState, createContext } from 'react';
 
-function Login() {
+function Login(session) {
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
-    const location = useLocation();
-    const navigate = useNavigate();
-
+    
     useEffect(() => {
         checkLogin()
     }, []);

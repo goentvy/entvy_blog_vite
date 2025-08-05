@@ -14,6 +14,9 @@
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
 }
+.menu_wrap:focus {
+    background-color: #000;
+}
 .menu_list > li {
     padding-top: 15px;
     padding-left: 20px;

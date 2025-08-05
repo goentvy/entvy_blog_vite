@@ -1,17 +1,13 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { InsertSubmit } from '../../store/hooks'
+import { useNavigate } from 'react-router-dom'
 import '../../styles/Post.css'
-
-interface PostRow {
-    category: string;
-    title: string;
-    content: string;
-}
 
 function Post() {
     const [ category, setCategory ] = useState<string>('html');
     const [ title, setTitle ] = useState<string>('');
     const [ content, setContent ] = useState<string>('');
+    const navigate = useNavigate();
 
     function categoryValue(e: ChangeEvent<HTMLSelectElement>) {
         setCategory(e.target.value);
@@ -35,6 +31,7 @@ function Post() {
         }
         InsertSubmit({category, title, content}, 'post');
         resetValue();
+        navigate('/entvy_blog_vite/admin/page');
     }
     return (
         <div className="post_wrap">

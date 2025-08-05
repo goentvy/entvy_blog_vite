@@ -17,10 +17,11 @@ import Contact from './pages/Contact.jsx'
 import TodoList from './pages/TodoList.jsx'
 import Search from './layout/Search.jsx'
 import Menu from './layout/Menu.js'
-import Admin from './pages/Admin.tsx'
+import Login from './features/admin/Login.tsx'
 import Post from './features/admin/Post.tsx'
-import Delete from './features/admin/Delete.tsx'
+import AdminPage from './features/admin/AdminPage.tsx'
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
+import ProtectedRoutes from './features/admin/ProtectedRoutes.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -42,9 +43,9 @@ createRoot(document.getElementById('root')).render(
           <Route path="/entvy_blog_vite/contact" element={<Contact />} />
           <Route path="/entvy_blog_vite/todolist" element={<TodoList />} />
           <Route path="/entvy_blog_vite/search" element={<Search />} />
-          <Route path="/entvy_blog_vite/admin" element={<Admin />} />
+          <Route path="/entvy_blog_vite/admin" element={<Login />} />
           <Route path="/entvy_blog_vite/admin/post" element={<Post />} />
-          <Route path="/entvy_blog_vite/admin/table" element={<Delete />} />
+          <Route path="/entvy_blog_vite/admin/page" element={<AdminPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -1,0 +1,73 @@
+.post_write {
+    margin: 20px 0;
+    text-align: right;
+    height: 35px;
+}
+.post_write > a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px 10px;
+    height: 35px;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+    margin: 0 5px;
+}
+.post_write > a:hover {
+    background-color: #FF5544;
+}
+.post_table {
+    width: 100%;
+    background-color: #ffffff;
+}
+.post_table > table {
+    table-layout: fixed;
+    border: 1px solid #CDCDCD;
+    border-collapse: collapse;
+}
+.post_table > * {
+    font-size: 14px;
+    text-align: center;
+}
+.post_table > table > tbody > tr > td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.post_table > table {
+    width: 100%;
+}
+.post_table > table > thead {
+    border-bottom: 1px solid #CDCDCD;
+}
+.post_table > table > thead > tr > th {
+    font-size: 16px;
+    padding: 5px 0;
+}
+.delete_btn {
+    border: none;
+    background-color: #FF5544;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px;
+    border-radius: 10px;
+}
+.delete_btn:hover {
+    background-color: #fd2511;
+}
+.post_table > table > tbody > tr > td {
+    font-size: 14px;
+    padding: 5px 0;
+}
+.post_table > table > thead > tr > th:nth-child(1) {
+    width: 15%;
+}
+.post_table > table > thead > tr > th:nth-child(2) {
+    width: 25%;
+}
+.post_table > table > thead > tr > th:nth-child(3) {
+    width: 45%;
+}
+.post_table > table > thead > tr > th:nth-child(4) {
+    width: 15%;
+}
