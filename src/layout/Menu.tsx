@@ -24,7 +24,6 @@ function Menu() {
     }
 
     return (
-        // <div className={`menu_container ${toggle ? 'display-none' : ''}`}>
             <div className={`menu_wrap ${toggle ? 'display-none' : ''}`} id="menu">
                 <ul className="menu_list">
                     <Sidelink url="https://goentvy.github.io/html2507/" label="HTML+CSS 과제 →" event={menuClose} />
@@ -37,7 +36,6 @@ function Menu() {
                     <Sidelink url="/entvy_blog_vite/admin" label="관리자 →" target="_self" event={menuClose} />
                 </ul>
             </div>
-        // </div>
     );
 }
 
