@@ -38,7 +38,11 @@ export async function checkLogin() {
 // github 계정 연동 로그아웃
 export async function signOut() {
     const { error } = await supabase.auth.signOut();
-    checkLogin();
+    if(error) {
+        console.error('LogOut Error', error);
+    } else {
+        checkLogin();
+    }
 }
 
 //  supabase DB Get

@@ -20,7 +20,6 @@ function Laside() {
                 <Sidelink url="/entvy_blog_vite/gallery" label="갤러리 →" target="_self" />
                 <Sidelink url="/entvy_blog_vite/contact" label="방명록 →" target="_self" />
                 <Sidelink url="/entvy_blog_vite/todolist" label="TodoList →" target="_self" />
-                <Sidelink url="/entvy_blog_vite/admin" label="관리자 →" target="_self" />
             </ul>
         </aside>
     );
