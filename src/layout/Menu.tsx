@@ -26,7 +26,7 @@ function Menu() {
     return (
             <div className={`menu_wrap ${toggle ? 'display-none' : ''}`} id="menu">
                 <ul className="menu_list">
-                    <Sidelink url="https://goentvy.github.io/html2507/" label="HTML+CSS 과제 →" event={menuClose} />
+                    <Sidelink url="https://goentvy.github.io/react-site/" label="React 과제 →" event={menuClose} />
                     <Sidelink url="https://goentvy.github.io/js2507/" label="Javascript 과제 →" event={menuClose} />
                     <Sidelink url="https://skc4365.github.io/web2507/" label="수강생 과제 →" event={menuClose}/>
                     <Sidelink url="/entvy_blog_vite/filter" label="검색어필터 →" target="_self" event={menuClose} />

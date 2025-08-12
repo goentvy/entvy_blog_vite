@@ -1,46 +1,31 @@
 import '../styles/Main.css'
 import Laside from '../layout/Laside.jsx'
 import Raside from '../layout/Raside.jsx'
+import Post from '../layout/Post.jsx'
 import { getData } from '../store/hooks.js'
 import { useState, useEffect } from 'react'
 import { DateFilter } from '../store/hooks.js'
 
-function Post({id, category, title, content, date}) {
-    return (
-        <>
-            <div className="post" key={id}>
-                <h2 className="post_title cursor">{`[${category}] ${title}`}</h2>
-                <div className="post_content">
-                    <p>{content}</p>
-                    <p className="post_author">
-                        <span>By Entvy</span> | <span>{date}</span>
-                    </p>
-                </div>
-            </div>
-        </>
-    );
-}
-
 function Main() {
-    const [ post, setPost] = useState([]);
+    const [ posts, setPosts] = useState([]);
 
     useEffect(() => {
-        getData(setPost, 'post')
+        getData(setPosts, 'post');
     }, []);
-    // console.log(post[0].created_at);
+
     return (
         <>
             <div className="main_wrap">
                 <Laside />
                 <div className="main_content">
-                    {post.map(p => (
+                    {posts.map(post => (
                         <Post 
-                            id={p.id} 
-                            key={p.id}
-                            category={p.category} 
-                            title={p.title} 
-                            content={p.content} 
-                            date={ DateFilter(p.created_at) }
+                            id={post.id} 
+                            key={post.id}
+                            category={post.category} 
+                            title={post.title} 
+                            content={post.content} 
+                            date={ DateFilter(post.created_at) }
                         />
                     ))}
                 </div>

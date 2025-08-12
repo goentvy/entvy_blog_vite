@@ -46,8 +46,13 @@ export async function signOut() {
 }
 
 //  supabase DB Get
-export async function getData(setData, dbTable) {
-    const { data, error } = await supabase.from(dbTable).select();
+export async function getData(setData, dbTable, columnName, value) {
+    let query = supabase.from(dbTable).select();
+    if(columnName && value) {
+        query = query.eq(columnName, value);
+    }
+
+    const { data, error } = await query;
     if(error) {
         console.error('SELECT Error', error);
     } else {
