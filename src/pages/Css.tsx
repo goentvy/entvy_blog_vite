@@ -1,22 +1,23 @@
-import '../styles/Html.css';
+import '../styles/Css.css';
 import Post from '../layout/Post'
 import { useState, useEffect } from 'react'
 import { getData, DateFilter } from '../store/hooks'
+import { PostType } from 'types';
 
-function Html() {
-    const [ posts, setPosts ] = useState([]);
+const Css: React.FC = () => {
+    const [ posts, setPosts ] = useState<PostType[]>([]);
 
     useEffect(() => {
-        getData(setPosts, 'post', 'category', 'html');
+        getData<PostType>(setPosts, 'post', 'category', 'css');
     }, [])
 
     return (
         <>
-            <div className="html_wrap">
+            <div className="css_wrap">
                 {posts.map(post => (
                     <Post 
-                        id={post.id} 
                         key={post.id}
+                        id={post.id} 
                         category={post.category} 
                         title={post.title} 
                         content={post.content} 
@@ -27,4 +28,4 @@ function Html() {
     );
 }
 
-export default Html;
+export default Css;

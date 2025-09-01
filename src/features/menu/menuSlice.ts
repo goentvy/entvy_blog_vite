@@ -15,7 +15,7 @@ export const menuSlice = createSlice({
     initialState,
     reducers: {
         toggle: (state) => {
-            state.toggle = state.toggle
+            state.toggle = !state.toggle;
         },
         setToggle: (state, action: PayloadAction<boolean>) => {
             state.toggle = action.payload
@@ -23,6 +23,8 @@ export const menuSlice = createSlice({
     },
 })
 
-export const { toggle, setToggle } = menuSlice.actions
-export const selectMenu = (state: RootState) => state.menu.toggle
-export default menuSlice.reducer
+export const { toggle, setToggle } = menuSlice.actions;
+
+export const selectMenu = (state: RootState): boolean => state.menu.toggle;
+
+export default menuSlice.reducer;

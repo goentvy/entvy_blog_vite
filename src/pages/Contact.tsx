@@ -1,32 +1,42 @@
 import '../styles/Contact.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import { getData, DateFilter, InsertSubmit } from '../store/hooks'
 
-function Contact() {
-    const [ username, setName ] = useState('');
-    const [ password, setPwd ] = useState('');
-    const [ content, setTextarea ] = useState('');
-    const [ contactDatas, setContactData ] = useState([]);
+interface ContactData {
+    id: number;
+    username: string;
+    password: string;
+    content: string;
+    created_at: string;
+}
 
-    function nameValue(e) {
+const Contact: React.FC = () => {
+    const [ username, setName ] = useState<string>('');
+    const [ password, setPwd ] = useState<string>('');
+    const [ content, setTextarea ] = useState<string>('');
+    const [ contactDatas, setContactData ] = useState<ContactData[]>([]);
+
+    const nameValue = (e: ChangeEvent<HTMLInputElement>): void => {
         setName(e.target.value);
     }
-    function pwdValue(e) {
+    const pwdValue = (e: ChangeEvent<HTMLInputElement>): void => {
         setPwd(e.target.value);
     }
-    function textareaValue(e) {
+    const textareaValue = (e: ChangeEvent<HTMLTextAreaElement>): void => {
         setTextarea(e.target.value);
     }
 
-    async function contactSubmit() {
+    const contactSubmit = (e: React.MouseEvent<HTMLButtonElement>): void => {
+        e.preventDefault();
         if(username === '' || password === '' || content === '') {
-            return alert('이름, 비밀번호, 내용을 모두 넣어주세요.')
+            alert('이름, 비밀번호, 내용을 모두 넣어주세요.');
+            return;
         }
-        InsertSubmit({username, password, content}, 'contact');
+        InsertSubmit({ username, password, content }, 'contact');
     }
 
     useEffect(() => {
-        getData(setContactData, 'contact');
+        getData<ContactData>(setContactData, 'contact');
     }, []);
 
     return (

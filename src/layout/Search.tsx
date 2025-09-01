@@ -2,17 +2,18 @@ import '../styles/Search.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function Search() {
-    const [ search, setSearch ] = useState('');
+const Search: React.FC = () => {
+    const [ search, setSearch ] = useState<string>('');
     const navigate = useNavigate();
 
-    function searchKeyDown(e) {
+    const searchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
         if(e.key === 'Enter') {
-            setSearch(e.target.value);
-            navigate(`/entvy_blog_vite/search/${e.target.value}`);
+            const value = (e.target as HTMLInputElement).value;
+            setSearch(value);
+            navigate(`/entvy_blog_vite/search/${value}`);
         }
     }
-    function closeClick() {
+    const closeClick = (): void => {
         navigate(-1);
     }
 

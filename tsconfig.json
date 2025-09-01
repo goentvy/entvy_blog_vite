@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true, // JSON 모듈 import 허용
+    "esModuleInterop": true, // commonJS 호환 import 허용
     "baseUrl": "src",
     "jsx": "react-jsx",
     "module": "es2020",

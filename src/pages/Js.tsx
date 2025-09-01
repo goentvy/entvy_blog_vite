@@ -1,22 +1,23 @@
-import '../styles/Css.css';
+import '../styles/Js.css';
 import Post from '../layout/Post'
 import { useState, useEffect } from 'react'
 import { getData, DateFilter } from '../store/hooks'
+import { PostType } from 'types';
 
-function Css() {
-    const [ posts, setPosts ] = useState([]);
+const Js: React.FC = () => {
+    const [ posts, setPosts ] = useState<PostType[]>([]);
 
     useEffect(() => {
-        getData(setPosts, 'post', 'category', 'css');
+        getData<PostType>(setPosts, 'post', 'category', 'js');
     }, [])
 
     return (
         <>
-            <div className="css_wrap">
+            <div className="js_wrap">
                 {posts.map(post => (
                     <Post 
-                        id={post.id} 
                         key={post.id}
+                        id={post.id} 
                         category={post.category} 
                         title={post.title} 
                         content={post.content} 
@@ -27,4 +28,4 @@ function Css() {
     );
 }
 
-export default Css;
+export default Js;

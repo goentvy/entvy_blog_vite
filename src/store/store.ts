@@ -1,7 +1,7 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { configureStore } from "@reduxjs/toolkit"
 import menuReducer from '../features/menu/menuSlice'
-import { createClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
 interface ImportMetaEnv {
     VITE_SUPABASE_URL: string;
@@ -16,7 +16,7 @@ export interface EnvConfig {
   supabaseAnonKey: string;
 }
 
-export const envConfig: EnvConfig = {
+export const envConfig: Readonly<EnvConfig> = {
   supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
   supabaseAnonKey: import.meta.env.VITE_SUPABASE_ANON_KEY,
 };
@@ -27,7 +27,7 @@ declare global {
     }
 }
 
-export const supabase = createClient(
+export const supabase: SupabaseClient = createClient(
     import.meta.env.VITE_SUPABASE_URL, 
     import.meta.env.VITE_SUPABASE_ANON_KEY
 );
@@ -36,7 +36,7 @@ export const store = configureStore({
   reducer: {
     menu: menuReducer,
   },
-})
+});
 
 // Infer the type of `store`
 export type AppStore = typeof store

@@ -1,13 +1,20 @@
 import '../styles/Menu.css'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
 import {
-    toggle,
+    toggle as toggleAction,
     setToggle,
     selectMenu,
 } from '../features/menu/menuSlice'
 import { Link } from 'react-router-dom';
 
-function Sidelink({ url, label, target="_blank", event}) {
+interface SidelinkProps {
+    url: string;
+    label: string;
+    target?: React.HTMLAttributeAnchorTarget;
+    event?: React.MouseEventHandler<HTMLAnchorElement>;
+}
+
+const Sidelink: React.FC<SidelinkProps> = ({ url, label, target="_blank", event}) => {
     return (
         <li>
             <Link to={url} target={target} onClick={event}>{label}</Link>
@@ -15,13 +22,13 @@ function Sidelink({ url, label, target="_blank", event}) {
     );
 }
 
-function Menu() {
-    const dispatch = useAppDispatch()
-    const toggle = useAppSelector(selectMenu)
+const Menu: React.FC = () => {
+    const dispatch = useAppDispatch();
+    const toggle = useAppSelector(selectMenu);
 
-    function menuClose() {
-        dispatch(setToggle(true))
-    }
+    const menuClose = ():void => {
+        dispatch(setToggle(true));
+    };
 
     return (
             <div className={`menu_wrap ${toggle ? 'display-none' : ''}`} id="menu">

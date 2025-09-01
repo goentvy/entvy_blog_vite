@@ -8,7 +8,7 @@ export const useAppDispatch = useDispatch.withTypes<AppDispatch>()
 export const useAppSelector = useSelector.withTypes<RootState>()
 
 // github 계정 연동 로그인
-export async function signInWithGithub() {
+export async function signInWithGithub(): Promise<void> {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "github",
         options: {
@@ -23,20 +23,18 @@ export async function signInWithGithub() {
 }
 
 // github 계정 상태체크
-export async function checkLogin() {
+export async function checkLogin(): Promise<void> {
     const authInfo = await supabase.auth.getSession();
     const session = authInfo.data.session;
     if(session === null) {
-        document.getElementById('Login').style.display = "block";
-        document.getElementById('Logout').style.display = "none";
+        console.log('logout success');
     } else {
-        document.getElementById('Login').style.display = "none";
-        document.getElementById('Logout').style.display = "block";
+        console.log('login');
     }
 }
 
 // github 계정 연동 로그아웃
-export async function signOut() {
+export async function signOut(): Promise<void> {
     const { error } = await supabase.auth.signOut();
     if(error) {
         console.error('LogOut Error', error);
@@ -46,13 +44,20 @@ export async function signOut() {
 }
 
 //  supabase DB Get
-export async function getData(setData, dbTable, columnName, value) {
+export async function getData<T>(
+    setData: React.Dispatch<React.SetStateAction<T[]>>,
+    dbTable: string,
+    columnName?: string,
+    value?: string | number
+): Promise<void> {
     let query = supabase.from(dbTable).select();
-    if(columnName && value) {
+
+    if(columnName && value !== undefined) {
         query = query.eq(columnName, value);
     }
 
     const { data, error } = await query;
+
     if(error) {
         console.error('SELECT Error', error);
     } else {
@@ -61,10 +66,12 @@ export async function getData(setData, dbTable, columnName, value) {
 }
 
 // supabase DB Insert
-export async function InsertSubmit(insertData, dbTable) {
-    const { data, error } = await supabase.from(dbTable).insert([
-        insertData
-    ]);
+export async function InsertSubmit<T extends Record<string, any>>(
+    insertData: T,
+    dbTable: string
+): Promise<void> {
+    const { data, error } = await supabase.from(dbTable).insert([insertData]);
+    
     if(error) {
         console.error('INSERT Error', error, data);
     } else {
@@ -73,28 +80,34 @@ export async function InsertSubmit(insertData, dbTable) {
 }
 
 //  supabase DB Delete
-export async function deletePost(id, dbTable) {
+export async function deletePost(
+    id: number | string,
+    dbTable: string
+): Promise<void> {
     const { data, error } = await supabase.from(dbTable).delete().eq("id", id);
+
     if(error) {
         console.error('Delete Error', error, data)
     } else {
         console.log('Delete success');
-        // 삭제 후 새로고침
         window.location.reload();
     }
 }
 
 // 날짜 시간 필더링 (2025-08-04 오후 2:14:00)
-export function DateFilter(date) {
-    return new Date(date).toLocaleDateString('ko-KR', 
-                {
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit'
-                }) + ' ' + new Date(date).toLocaleTimeString('ko-KR',
-                {
-                    hour: "numeric", 
-                    minute: "numeric", 
-                    second: "numeric"
-                });
+export function DateFilter(date: string | number | Date): string {
+    const dateObj = new Date(date);
+
+    return ( 
+        dateObj.toLocaleDateString('ko-KR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }) + " " + 
+        dateObj.toLocaleTimeString('ko-KR', {
+            hour: "numeric", 
+            minute: "numeric", 
+            second: "numeric"
+        })
+    );
 }

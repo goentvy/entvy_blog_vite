@@ -1,6 +1,17 @@
 import '../styles/Raside.css'
 
-function RightSideBar({title, content}) {
+interface SidebarContent {
+    title: string;
+    notice: string;
+    text: string;
+}
+
+interface RightSideBarProps {
+    title?: string;
+    content?: Omit<SidebarContent, 'title'>;
+}
+
+const RightSideBar: React.FC<RightSideBarProps> = ({ title, content }) => {
     return (
         <>
             <div className={title ? `${title} w-full` : "w-full"}>
@@ -17,9 +28,9 @@ function RightSideBar({title, content}) {
             </div>
         </>
     );
-}
+};
 
-const Content = [
+const Content: SidebarContent[] = [
     {
         title: "r_sidebar_notice", 
         notice: "공지사항",
@@ -32,14 +43,12 @@ const Content = [
     },
 ];
 
-function Raside() {
+const Raside: React.FC = () => {
     return (
         <div className="r_aside_wrap flex flex-col align-center justify-center items-center">
-            {
-                Content.map((item, index,) => (
-                    <RightSideBar key={index} title={item.title} content={item} />
-                ))
-            }
+            {Content.map((item, index) => (
+                <RightSideBar key={index} title={item.title} content={{ notice: item.notice, text: item.text }} />
+            ))}
         </div>
     );
 }

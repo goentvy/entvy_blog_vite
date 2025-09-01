@@ -1,22 +1,23 @@
-import '../styles/Figma.css';
+import '../styles/Html.css';
 import Post from '../layout/Post'
 import { useState, useEffect } from 'react'
 import { getData, DateFilter } from '../store/hooks'
+import { PostType } from 'types';
 
-function Figma() {
-    const [ posts, setPosts ] = useState([]);
+const Html: React.FC = () => {
+    const [ posts, setPosts ] = useState<PostType[]>([]);
 
     useEffect(() => {
-        getData(setPosts, 'post', 'category', 'figma');
+        getData<PostType>(setPosts, 'post', 'category', 'html');
     }, [])
 
     return (
         <>
-            <div className="figma_wrap">
+            <div className="html_wrap">
                 {posts.map(post => (
                     <Post 
-                        id={post.id} 
                         key={post.id}
+                        id={post.id} 
                         category={post.category} 
                         title={post.title} 
                         content={post.content} 
@@ -27,4 +28,4 @@ function Figma() {
     );
 }
 
-export default Figma;
+export default Html;

@@ -1,13 +1,21 @@
 import '../styles/Main.css'
-import Laside from '../layout/Laside.jsx'
-import Raside from '../layout/Raside.jsx'
-import Post from '../layout/Post.jsx'
+import Laside from '../layout/Laside.js'
+import Raside from '../layout/Raside.js'
+import Post from '../layout/Post.js'
 import { getData } from '../store/hooks.js'
 import { useState, useEffect } from 'react'
 import { DateFilter } from '../store/hooks.js'
 
+interface PostData {
+    id: number;
+    category: string;
+    title: string;
+    content: string;
+    created_at: string;
+}
+
 function Main() {
-    const [ posts, setPosts] = useState([]);
+    const [ posts, setPosts] = useState<PostData[]>([]);
 
     useEffect(() => {
         getData(setPosts, 'post');

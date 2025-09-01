@@ -1,4 +1,6 @@
-function Post({id, category, title, content, date}) {
+import { PostType } from "types";
+
+const Post: React.FC<PostType> = ({ id, category, title, content, date }) => {
     return (
         <>
             <div className="post" key={id}>
@@ -12,6 +14,6 @@ function Post({id, category, title, content, date}) {
             </div>
         </>
     );
-}
+};
 
 export default Post;

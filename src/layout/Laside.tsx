@@ -1,7 +1,13 @@
 import '../styles/Laside.css'
 import { Link } from 'react-router-dom';
 
-function Sidelink({ url, label, target="_blank"}) {
+interface SlidelinkProps {
+    url: string;
+    label: string;
+    target?: React.HTMLAttributeAnchorTarget;
+}
+
+export const Sidelink: React.FC<SlidelinkProps> = ({ url, label, target="_blank" }) => {
     return (
         <li>
             <Link to={url} target={target}>{label}</Link>
@@ -9,7 +15,7 @@ function Sidelink({ url, label, target="_blank"}) {
     );
 }
 
-function Laside() {
+const Laside: React.FC = () => {
     return (
         <aside className="l_aside_wrap flex align-center justify-left items-center">
             <ul className="l_aside_list">

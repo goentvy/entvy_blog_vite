@@ -2,32 +2,35 @@ import '../styles/Header.css'
 import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
 import {
-    toggle,
+    toggle as toggleAction,
     setToggle,
     selectMenu,
 } from '../features/menu/menuSlice'
 import { useEffect } from 'react'
 
-function Header() {
+const Header: React.FC = () => {
     const dispatch = useAppDispatch();
     const toggle = useAppSelector(selectMenu);
 
-    function toggleMenu() {
+    const toggleMenu = (): void => {
         dispatch(setToggle(!toggle));
     }
     
     useEffect(() => {
-        function handleClickOutside(event) {
+        function handleClickOutside(event: MouseEvent): void {
             const menuElement = document.getElementById('menu');
             // event.target에서 버튼 요소를 찾음
-            const menuButton = event.target.closest('button');
+            const target = event.target as HTMLElement;
+            const menuButton = target.closest('button');
             
             // 메뉴가 열려있고, 클릭된 요소가 메뉴 외부이고 메뉴 버튼이 아닌 경우
-            if (!toggle && menuElement && !menuElement.contains(event.target) && 
-                !menuButton?.contains(event.target)) {
+            if (
+                !toggle &&
+                menuElement &&
+                !menuElement.contains(target) && 
+                !menuButton?.contains(target)
+            ) {
                 dispatch(setToggle(true));
-                console.log(!menuButton?.contains(event.target));
-                console.log(event.target);
             }
         }
 

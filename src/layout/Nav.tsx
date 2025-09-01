@@ -1,7 +1,7 @@
 import '../styles/Nav.css';
 import { Link } from 'react-router-dom';
 
-function Nav() {
+const Nav: React.FC = () => {
     return (
         <nav className="nav_wrap flex justify-between items-center">
             <ul className="nav_list w-full flex justify-around items-center">
